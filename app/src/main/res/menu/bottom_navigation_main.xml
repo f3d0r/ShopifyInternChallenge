@@ -15,7 +15,7 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/refreshData"
+        android:id="@+id/action_refresh_data"
         android:enabled="true"
         android:icon="@drawable/ic_refresh_white_48px"
         android:title="@string/refresh_data"

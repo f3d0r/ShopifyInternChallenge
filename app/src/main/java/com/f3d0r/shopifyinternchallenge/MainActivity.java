@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.f3d0r.shopifyinternchallenge.retrofit.ShopifyClient;
@@ -22,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setTitle("Shopify - Orders by Province");
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://shopicruit.myshopify.com/")
                 .addConverterFactory(JacksonConverterFactory.create())
@@ -37,10 +39,14 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.action_by_province:
-                                Log.d("TAG", "action_by_province");
+                                getSupportActionBar().setTitle("Shopify - Orders by Province");
                                 break;
                             case R.id.action_by_year:
-                                Log.d("TAG", "action_by_year");
+                                getSupportActionBar().setTitle("Shopify - Orders by Year");
+                                break;
+                            case R.id.action_refresh_data:
+                                getSupportActionBar().setTitle("Shopify - Refreshing...");
+                                //TODO: Add refresh data functionality
                                 break;
                         }
                         return true;
