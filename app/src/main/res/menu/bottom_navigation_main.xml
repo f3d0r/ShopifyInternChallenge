@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_by_province"
+        android:enabled="true"
+        android:icon="@drawable/ic_place_white_48px"
+        android:title="@string/orders_by_province"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_by_year"
+        android:enabled="true"
+        android:icon="@drawable/ic_date_range_white_48px"
+        android:title="@string/orders_by_year"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/refreshData"
+        android:enabled="true"
+        android:icon="@drawable/ic_refresh_white_48px"
+        android:title="@string/refresh_data"
+        app:showAsAction="ifRoom" />
+</menu>

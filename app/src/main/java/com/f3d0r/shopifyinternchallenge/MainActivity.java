@@ -1,15 +1,14 @@
 package com.f3d0r.shopifyinternchallenge;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 
-import com.f3d0r.shopifyinternchallenge.jackson_models.OrderList;
 import com.f3d0r.shopifyinternchallenge.retrofit.ShopifyClient;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
@@ -30,18 +29,36 @@ public class MainActivity extends AppCompatActivity {
 
         ShopifyClient service = retrofit.create(ShopifyClient.class);
 
-        Call<OrderList> repos = service.getOrders(PAGE, ACCESS_TOKEN);
-        repos.enqueue(new Callback<OrderList>() {
-            @Override
-            public void onResponse(Call<OrderList> call, Response<OrderList> response) {
-                OrderList orderList = response.body();
-            }
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-            @Override
-            public void onFailure(Call<OrderList> call, Throwable t) {
-                Log.d("ERROR", t.toString());
-            }
-        });
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_by_province:
+                                Log.d("TAG", "action_by_province");
+                                break;
+                            case R.id.action_by_year:
+                                Log.d("TAG", "action_by_year");
+                                break;
+                        }
+                        return true;
+                    }
+                });
+
+//        Call<OrderList> repos = service.getOrders(PAGE, ACCESS_TOKEN);
+//        repos.enqueue(new Callback<OrderList>() {
+//            @Override
+//            public void onResponse(Call<OrderList> call, Response<OrderList> response) {
+//                OrderList orderList = response.body();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<OrderList> call, Throwable t) {
+//                Log.d("ERROR", t.toString());
+//            }
+//        });
 
     }
 }
