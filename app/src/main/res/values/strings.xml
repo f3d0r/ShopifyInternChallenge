@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Shopify - Order Summary</string>
 
-    <string name="orders_by_province">Orders by Province</string>
+    <string name="orders_by_province">Orders by Providence</string>
     <string name="orders_by_year">Orders by Year</string>
     <string name="refresh">Refresh</string>
 
@@ -10,5 +10,15 @@
         <item quantity="other">%1$d orders from %2$d</item>
     </plurals>
 
-    <!--TODO: Transfer all strings to here-->
+    <plurals name="orders_by_providence">
+        <item quantity="one">%1$d order from %2$s</item>
+        <item quantity="other">%1$d orders from %2$s</item>
+    </plurals>
+
+    <string name="order_number">#%1$d</string>
+    <string name="total_price">$%1$s</string>
+    <string name="customer_name">%2$s, %1$s</string>
+    <string name="total_items">Total items: %1$d</string>
+    <string name="shipping_location">Ship To: %1$s, %2$s</string>
+    <string name="order_time">Created At: %1$s</string>
 </resources>
