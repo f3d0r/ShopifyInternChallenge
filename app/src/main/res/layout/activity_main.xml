@@ -13,10 +13,10 @@
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:text="@string/orders_by_province"
-        android:textSize="18sp" />
+        android:textSize="12sp" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/province_list"
+        android:id="@+id/rv_province_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
@@ -24,21 +24,33 @@
         android:paddingRight="24dp"
         android:scrollbars="vertical" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
     <TextView
         android:id="@+id/tv_orders_by_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:text="@string/orders_by_year"
-        android:textSize="18sp" />
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_total_orders_by_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/year_list"
+        android:id="@+id/rv_orders_year"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
+        android:layout_marginBottom="12dp"
         android:scrollbars="vertical" />
 
 </LinearLayout>
