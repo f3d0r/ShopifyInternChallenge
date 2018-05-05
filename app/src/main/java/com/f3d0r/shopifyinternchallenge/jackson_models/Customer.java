@@ -2,7 +2,9 @@ package com.f3d0r.shopifyinternchallenge.jackson_models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
 
     @JsonProperty("total_spent")
     private String totalSpent;

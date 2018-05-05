@@ -2,7 +2,9 @@ package com.f3d0r.shopifyinternchallenge.jackson_models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class BillingAddress {
+import java.io.Serializable;
+
+public class BillingAddress implements Serializable {
 
     @JsonProperty("zip")
     private String zip;

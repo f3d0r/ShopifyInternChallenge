@@ -1,10 +1,11 @@
 package com.f3d0r.shopifyinternchallenge.jackson_models;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class LineItemsItem {
+import java.io.Serializable;
+import java.util.List;
+
+public class LineItemsItem implements Serializable {
 
     @JsonProperty("variant_title")
     private String variantTitle;

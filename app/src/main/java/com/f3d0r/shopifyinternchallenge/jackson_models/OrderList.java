@@ -2,9 +2,10 @@ package com.f3d0r.shopifyinternchallenge.jackson_models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class OrderList {
+public class OrderList implements Serializable {
 
     @JsonProperty("orders")
     private List<Order> orders;

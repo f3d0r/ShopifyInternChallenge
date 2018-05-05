@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Intern Challenge - Order Summary Page</string>
+    <string name="app_name">Shopify - Order Summary</string>
 
-    <string name="orders_by_province">by Province</string>
-    <string name="orders_by_year">by Year</string>
-    <string name="refresh_data">Refresh</string>
+    <string name="orders_by_province">Orders by Province</string>
+    <string name="orders_by_year">Orders by Year</string>
+    <string name="refresh">Refresh</string>
 </resources>
