@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     //the page number that is used for the Shopify API orders request
     public static final int PAGE = 1;
     //the year selected to show orders from in bottom RecyclerView of MainActivity
-    public static final int ORDER_YEAR = 2016;
+    public static final int ORDER_YEAR = 2017;
 
     private ShopifyClient shopifyService;
 
