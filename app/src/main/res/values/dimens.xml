@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="item_offset">10dp</dimen>
-    <dimen name="detail_backdrop_height">250dp</dimen>
-    <dimen name="backdrop_title">30dp</dimen>
-    <dimen name="backdrop_subtitle">18dp</dimen>
-    <dimen name="card_margin">5dp</dimen>
-    <dimen name="card_album_radius">0dp</dimen>
-    <dimen name="album_cover_height">160dp</dimen>
-    <dimen name="album_title_padding">10dp</dimen>
-    <dimen name="album_title">15dp</dimen>
-    <dimen name="songs_count_padding_bottom">5dp</dimen>
-    <dimen name="songs_count">12dp</dimen>
-    <dimen name="ic_album_overflow_width">20dp</dimen>
-    <dimen name="ic_album_overflow_height">30dp</dimen>
-    <dimen name="ic_album_overflow_margin_top">10dp</dimen>
+    <dimen name="header_text_size">12sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_large">16sp</dimen>
 
-    <dimen name="list_item_height">48dp</dimen>
-    <dimen name="horizontal_margin">16dp</dimen>
-    <dimen name="list_item_left_margin">72dp</dimen>
+    <dimen name="header_padding">12dp</dimen>
 
-    <!--TODO: Clean up unnecessary dimens-->
+    <dimen name="item_state_cat_image_padding">2dp</dimen>
+    <dimen name="item_state_cat_vertical_margin">2dp</dimen>
+    <dimen name="item_state_cat_height">48dp</dimen>
+    <dimen name="item_state_cat_horizontal_margin">16dp</dimen>
+
+    <dimen name="item_province_height">8dp</dimen>
+    <dimen name="item_province_horizontal_margin">4dp</dimen>
+
+    <dimen name="cv_elevation">3dp</dimen>
+    <dimen name="cv_radius">0dp</dimen>
+    <dimen name="cv_horizontal_margin">8dp</dimen>
+    <dimen name="cv_vertical_margin">4dp</dimen>
+    <dimen name="cv_padding">4dp</dimen>
+
+    <dimen name="rv_padding_horizontal">16dp</dimen>
+    <dimen name="rv_padding_vertical">8dp</dimen>
+
+    <dimen name="divider_height">1dp</dimen>
 </resources>

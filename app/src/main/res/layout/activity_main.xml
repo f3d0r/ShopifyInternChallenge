@@ -25,47 +25,37 @@
             android:id="@+id/tv_orders_by_province"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="12dp"
+            android:padding="@dimen/header_padding"
             android:text="@string/orders_by_province"
-            android:textSize="12sp" />
+            android:textSize="@dimen/header_text_size" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_province_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingEnd="@dimen/rv_padding_horizontal"
+            android:paddingStart="@dimen/rv_padding_horizontal"
             android:layout_weight="0.5"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
             android:scrollbars="vertical" />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/divider_height"
             android:background="@android:color/darker_gray" />
-
-        <TextView
-            android:id="@+id/tv_orders_by_year"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:text="@string/orders_by_year"
-            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/tv_total_orders_by_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingEnd="24dp"
-            android:paddingStart="24dp" />
+            android:padding="@dimen/header_padding"
+            android:textSize="@dimen/header_text_size" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_orders_year"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="12dp"
             android:layout_weight="0.5"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
+            android:paddingBottom="@dimen/rv_padding_vertical"
             android:scrollbars="vertical" />
 
     </LinearLayout>

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int PAGE = 1;
     public static final String ACCESS_TOKEN = "c32313df0d0ef512ca64d5b336a0d7c6";
-    public static final int ORDER_YEAR = 2017;
+    public static final int ORDER_YEAR = 2016;
 
     private ShopifyClient shopifyService;
 
@@ -90,8 +90,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getOrders() {
-//        TODO: Replace ProgressDialog with loading/progress circle of some sort
-
         Call<OrderList> getOrdersCall = shopifyService.getOrders(PAGE, ACCESS_TOKEN);
         getOrdersCall.enqueue(new Callback<OrderList>() {
             @Override
@@ -157,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
         int count = ordersByYear.get(ORDER_YEAR).size();
         Resources res = getResources();
-        String ordersFoundText = res.getQuantityString(R.plurals.orders_by_year_found, count, count, ORDER_YEAR);
+        String ordersFoundText = res.getQuantityString(R.plurals.orders_by_year, count, count, ORDER_YEAR);
 
         mTotalOrdersByYear.setText(ordersFoundText);
 
