@@ -1,4 +1,10 @@
-package com.f3d0r.shopifyinternchallenge.view_holders;
+package com.f3d0r.shopifyinternchallenge.expandable_view_holders;
+
+/*
+  ViewHolder for child view (Order categorized by province) in expandable RecyclerView.
+
+  @author Fedor Paretsky
+ */
 
 import android.view.View;
 import android.widget.TextView;
@@ -6,7 +12,7 @@ import android.widget.TextView;
 import com.f3d0r.shopifyinternchallenge.R;
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
 
-public class SubstateOrderViewHolder extends ChildViewHolder {
+public class SubProvinceOrderViewHolder extends ChildViewHolder {
 
     private TextView mOrderNumber;
     private TextView mTotalPrice;
@@ -15,7 +21,7 @@ public class SubstateOrderViewHolder extends ChildViewHolder {
     private TextView mShippingLocation;
     private TextView mOrderTime;
 
-    public SubstateOrderViewHolder(View itemView) {
+    public SubProvinceOrderViewHolder(View itemView) {
         super(itemView);
         mOrderNumber = itemView.findViewById(R.id.tv_order_number);
         mTotalPrice = itemView.findViewById(R.id.tv_total_price);

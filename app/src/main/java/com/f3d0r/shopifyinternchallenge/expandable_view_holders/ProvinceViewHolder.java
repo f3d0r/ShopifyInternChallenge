@@ -1,4 +1,10 @@
-package com.f3d0r.shopifyinternchallenge.view_holders;
+package com.f3d0r.shopifyinternchallenge.expandable_view_holders;
+
+/*
+  ViewHolder for parent view (Province) in expandable RecyclerView.
+
+  @author Fedor Paretsky
+ */
 
 import android.content.Context;
 import android.view.View;
@@ -13,7 +19,11 @@ import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
 
 import static android.view.animation.Animation.RELATIVE_TO_SELF;
 
-public class StateViewHolder extends GroupViewHolder {
+public class ProvinceViewHolder extends GroupViewHolder {
+
+    private static final String GITHUB_STATE_SEAL_URL = "https://raw.githubusercontent.com/CivilServiceUSA/us-states/master/images/seals/";
+    private static final String STATE_SEAL_SIZE = "large";
+    private static final String NO_ADDRESS_IMAGE_URL = "http://www.clker.com/cliparts/u/Q/3/W/K/7/no-circle-do-not-circle-md.png";
 
     private TextView mStateName;
     private ImageView mExpandArrowIcon;
@@ -21,7 +31,7 @@ public class StateViewHolder extends GroupViewHolder {
 
     private Context context;
 
-    public StateViewHolder(View itemView) {
+    public ProvinceViewHolder(View itemView) {
         super(itemView);
         mStateName = itemView.findViewById(R.id.list_item_state_name);
         mExpandArrowIcon = itemView.findViewById(R.id.list_item_expand_arrow);
@@ -65,9 +75,9 @@ public class StateViewHolder extends GroupViewHolder {
     }
 
     private String getURLPath(String state) {
-        if (state.equals("no address")) {
-            return "http://www.clker.com/cliparts/u/Q/3/W/K/7/no-circle-do-not-circle-md.png";
+        if (state.equalsIgnoreCase("no address")) {
+            return NO_ADDRESS_IMAGE_URL;
         }
-        return "https://raw.githubusercontent.com/CivilServiceUSA/us-states/master/images/seals/" + state + "-large.png";
+        return GITHUB_STATE_SEAL_URL + state + "-" + STATE_SEAL_SIZE + ".png";
     }
 }

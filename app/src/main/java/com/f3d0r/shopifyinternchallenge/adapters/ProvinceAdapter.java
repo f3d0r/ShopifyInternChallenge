@@ -1,44 +1,51 @@
 package com.f3d0r.shopifyinternchallenge.adapters;
 
+/*
+  RecyclerView Adapter that is parent to expandable RecyclerView containing orders categorized under
+  this RecyclerViews parent views.
+
+  @author Fedor Paretsky
+ */
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.f3d0r.shopifyinternchallenge.R;
-import com.f3d0r.shopifyinternchallenge.State;
-import com.f3d0r.shopifyinternchallenge.SubstateOrder;
-import com.f3d0r.shopifyinternchallenge.view_holders.StateViewHolder;
-import com.f3d0r.shopifyinternchallenge.view_holders.SubstateOrderViewHolder;
+import com.f3d0r.shopifyinternchallenge.expandable_view_holders.ProvinceViewHolder;
+import com.f3d0r.shopifyinternchallenge.expandable_view_holders.SubProvinceOrderViewHolder;
+import com.f3d0r.shopifyinternchallenge.expandable_view_objects.Province;
+import com.f3d0r.shopifyinternchallenge.expandable_view_objects.SubProvinceOrder;
 import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import java.util.List;
 
-public class StateAdapter extends ExpandableRecyclerViewAdapter<StateViewHolder, SubstateOrderViewHolder> {
+public class ProvinceAdapter extends ExpandableRecyclerViewAdapter<ProvinceViewHolder, SubProvinceOrderViewHolder> {
 
-    public StateAdapter(List<? extends ExpandableGroup> groups) {
+    public ProvinceAdapter(List<? extends ExpandableGroup> groups) {
         super(groups);
     }
 
     @Override
-    public StateViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
+    public ProvinceViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_state, parent, false);
-        return new StateViewHolder(view);
+        return new ProvinceViewHolder(view);
     }
 
     @Override
-    public SubstateOrderViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
+    public SubProvinceOrderViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_order, parent, false);
-        return new SubstateOrderViewHolder(view);
+        return new SubProvinceOrderViewHolder(view);
     }
 
     @Override
-    public void onBindChildViewHolder(SubstateOrderViewHolder holder, int flatPosition,
+    public void onBindChildViewHolder(SubProvinceOrderViewHolder holder, int flatPosition,
                                       ExpandableGroup group, int childIndex) {
 
-        final SubstateOrder currentOrder = ((State) group).getItems().get(childIndex);
+        final SubProvinceOrder currentOrder = ((Province) group).getItems().get(childIndex);
         holder.setOrderNumber(currentOrder.getOrderNumber());
         holder.setTotalPrice(currentOrder.getTotalPrice());
         holder.setCustomerName(currentOrder.getCustomerName());
@@ -48,7 +55,7 @@ public class StateAdapter extends ExpandableRecyclerViewAdapter<StateViewHolder,
     }
 
     @Override
-    public void onBindGroupViewHolder(StateViewHolder holder, int flatPosition,
+    public void onBindGroupViewHolder(ProvinceViewHolder holder, int flatPosition,
                                       ExpandableGroup group) {
         holder.setStateTitle(group);
     }

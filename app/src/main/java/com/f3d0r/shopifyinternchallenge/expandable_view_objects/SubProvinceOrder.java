@@ -1,21 +1,28 @@
-package com.f3d0r.shopifyinternchallenge;
+package com.f3d0r.shopifyinternchallenge.expandable_view_objects;
+
+/*
+  Order object containing information for specific order to be used only with expanded RecyclerView adapter
+  to show order information under specific province view.
+
+  @author Fedor Paretsky
+ */
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.Objects;
 
-public class SubstateOrder implements Parcelable {
+public class SubProvinceOrder implements Parcelable {
 
-    public static final Creator<SubstateOrder> CREATOR = new Creator<SubstateOrder>() {
+    public static final Creator<SubProvinceOrder> CREATOR = new Creator<SubProvinceOrder>() {
         @Override
-        public SubstateOrder createFromParcel(Parcel in) {
-            return new SubstateOrder(in);
+        public SubProvinceOrder createFromParcel(Parcel in) {
+            return new SubProvinceOrder(in);
         }
 
         @Override
-        public SubstateOrder[] newArray(int size) {
-            return new SubstateOrder[size];
+        public SubProvinceOrder[] newArray(int size) {
+            return new SubProvinceOrder[size];
         }
     };
     private String orderNumber;
@@ -25,7 +32,7 @@ public class SubstateOrder implements Parcelable {
     private String shippingLocation;
     private String orderTime;
 
-    SubstateOrder(String orderNumber, String totalPrice, String customerName, String numberItems, String shippingLocation, String orderTime) {
+    public SubProvinceOrder(String orderNumber, String totalPrice, String customerName, String numberItems, String shippingLocation, String orderTime) {
         this.orderNumber = orderNumber;
         this.totalPrice = totalPrice;
         this.customerName = customerName;
@@ -34,13 +41,13 @@ public class SubstateOrder implements Parcelable {
         this.orderTime = orderTime;
     }
 
-    private SubstateOrder(Parcel in) {
+    private SubProvinceOrder(Parcel in) {
         orderNumber = in.readString();
     }
 
     @Override
     public String toString() {
-        return "SubstateOrder{" +
+        return "SubProvinceOrder{" +
                 "orderNumber='" + orderNumber + '\'' +
                 ", totalPrice='" + totalPrice + '\'' +
                 ", customerName='" + customerName + '\'' +
@@ -53,8 +60,8 @@ public class SubstateOrder implements Parcelable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof SubstateOrder)) return false;
-        SubstateOrder that = (SubstateOrder) o;
+        if (!(o instanceof SubProvinceOrder)) return false;
+        SubProvinceOrder that = (SubProvinceOrder) o;
         return Objects.equals(orderNumber, that.orderNumber) &&
                 Objects.equals(totalPrice, that.totalPrice) &&
                 Objects.equals(customerName, that.customerName) &&
@@ -74,48 +81,24 @@ public class SubstateOrder implements Parcelable {
         return orderNumber;
     }
 
-    public void setOrderNumber(String orderNumber) {
-        this.orderNumber = orderNumber;
-    }
-
     public String getTotalPrice() {
         return totalPrice;
-    }
-
-    public void setTotalPrice(String totalPrice) {
-        this.totalPrice = totalPrice;
     }
 
     public String getCustomerName() {
         return customerName;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
     public String getNumberItems() {
         return numberItems;
-    }
-
-    public void setNumberItems(String numberItems) {
-        this.numberItems = numberItems;
     }
 
     public String getShippingLocation() {
         return shippingLocation;
     }
 
-    public void setShippingLocation(String shippingLocation) {
-        this.shippingLocation = shippingLocation;
-    }
-
     public String getOrderTime() {
         return orderTime;
-    }
-
-    public void setOrderTime(String orderTime) {
-        this.orderTime = orderTime;
     }
 
     @Override
