@@ -1,4 +1,4 @@
-package com.f3d0r.shopifyinternchallenge;
+package com.f3d0r.shopifyinternchallenge.adapters;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.f3d0r.shopifyinternchallenge.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +28,13 @@ public class ProvincesAdapter extends RecyclerView.Adapter<ProvincesAdapter.View
     }
 
     // Create new views (invoked by the layout manager)
+    @NonNull
     @Override
-    public ProvincesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public ProvincesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent,
                                                           int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_order_by_providence, parent, false);
+                .inflate(R.layout.item_order_by_province, parent, false);
 
         context = parent.getContext();
         return new ViewHolder(v);
@@ -42,7 +45,7 @@ public class ProvincesAdapter extends RecyclerView.Adapter<ProvincesAdapter.View
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         Resources resources = context.getResources();
-        holder.mProvinceSummary.setText(resources.getQuantityString(R.plurals.orders_by_providence, ordersByProvince.get(provinces.get(position)), ordersByProvince.get(provinces.get(position)), provinces.get(position)));
+        holder.mProvinceSummary.setText(resources.getQuantityString(R.plurals.orders_by_province, ordersByProvince.get(provinces.get(position)), ordersByProvince.get(provinces.get(position)), provinces.get(position)));
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -54,7 +57,7 @@ public class ProvincesAdapter extends RecyclerView.Adapter<ProvincesAdapter.View
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         private TextView mProvinceSummary;
 

@@ -1,6 +1,5 @@
 package com.f3d0r.shopifyinternchallenge;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -12,8 +11,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.f3d0r.shopifyinternchallenge.adapters.OrderAdapter;
+import com.f3d0r.shopifyinternchallenge.adapters.ProvincesAdapter;
 import com.f3d0r.shopifyinternchallenge.jackson_models.Order;
 import com.f3d0r.shopifyinternchallenge.jackson_models.OrderList;
 import com.f3d0r.shopifyinternchallenge.retrofit.ShopifyClient;
@@ -36,21 +39,32 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int PAGE = 1;
     public static final String ACCESS_TOKEN = "c32313df0d0ef512ca64d5b336a0d7c6";
-    public static final int ORDER_YEAR = 2016;
+    public static final int ORDER_YEAR = 2017;
 
     private ShopifyClient shopifyService;
 
     private List<Order> orderList;
 
-    private Map<String, Integer> ordersByProvince;
-    private Map<Integer, Integer> ordersByYear;
+    private Map<String, List<Order>> ordersByProvince;
+    private Map<Integer, List<Order>> ordersByYear;
+    private Map<String, Integer> orderAmountsByProvince;
 
     private TextView mTotalOrdersByYear;
+
+    private ProgressBar progressBar;
+    private LinearLayout container;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        progressBar = findViewById(R.id.progressBar);
+        container = findViewById(R.id.main_activity_container);
+
+        progressBar.setVisibility(View.VISIBLE);
+        container.setVisibility(View.GONE);
 
         Timber.plant(new Timber.DebugTree());
 
@@ -61,32 +75,22 @@ public class MainActivity extends AppCompatActivity {
 
         shopifyService = retrofit.create(ShopifyClient.class);
 
-        TextView mOrdersByProvince = findViewById(R.id.tv_orders_by_providence);
+        TextView mOrdersByProvince = findViewById(R.id.tv_orders_by_province);
         mOrdersByProvince.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(MainActivity.this, OrderListActivity.class);
-                myIntent.putExtra("orderList", (Serializable) orderList); //Optional parameters
+                myIntent.putExtra("ordersByProvince", (Serializable) ordersByProvince); //Optional parameters
                 startActivity(myIntent);
             }
         });
 
         mTotalOrdersByYear = findViewById(R.id.tv_total_orders_by_year);
-
         getOrders();
     }
 
     public void getOrders() {
 //        TODO: Replace ProgressDialog with loading/progress circle of some sort
-        // Set up progress before call
-        final ProgressDialog progressDialog;
-        progressDialog = new ProgressDialog(MainActivity.this);
-        progressDialog.setMax(100);
-        progressDialog.setMessage("Its loading....");
-        progressDialog.setTitle("ProgressDialog bar example");
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        // show it
-        progressDialog.show();
 
         Call<OrderList> getOrdersCall = shopifyService.getOrders(PAGE, ACCESS_TOKEN);
         getOrdersCall.enqueue(new Callback<OrderList>() {
@@ -95,13 +99,15 @@ public class MainActivity extends AppCompatActivity {
                 orderList = Objects.requireNonNull(response.body()).getOrders();
                 organizeOrders();
                 populateOrders();
-                progressDialog.dismiss();
+                progressBar.setVisibility(View.GONE);
+                container.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onFailure(@NonNull Call<OrderList> call, @NonNull Throwable t) {
                 Timber.tag("ERROR").d(t.toString());
-                progressDialog.dismiss();
+                progressBar.setVisibility(View.GONE);
+                container.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -109,19 +115,29 @@ public class MainActivity extends AppCompatActivity {
     public void organizeOrders() {
         ordersByProvince = new TreeMap<>();
         ordersByYear = new TreeMap<>();
+        orderAmountsByProvince = new TreeMap<>();
         for (Order currentOrder : orderList) {
             String currentOrderProvince = "No Address";
             if (currentOrder.getShippingAddress() != null)
                 currentOrderProvince = currentOrder.getShippingAddress().getProvince();
 
             if (!ordersByProvince.containsKey(currentOrderProvince))
-                ordersByProvince.put(currentOrderProvince, 0);
-            ordersByProvince.put(currentOrderProvince, ordersByProvince.get(currentOrderProvince) + 1);
+                ordersByProvince.put(currentOrderProvince, new ArrayList<Order>());
+
+            List<Order> currentProvinceOrderList = ordersByProvince.get(currentOrderProvince);
+            currentProvinceOrderList.add(currentOrder);
+            ordersByProvince.put(currentOrderProvince, currentProvinceOrderList);
 
             int currentOrderYear = Integer.parseInt(currentOrder.getCreatedAt().substring(0, currentOrder.getCreatedAt().indexOf("-")));
             if (!ordersByYear.containsKey(currentOrderYear))
-                ordersByYear.put(currentOrderYear, 0);
-            ordersByYear.put(currentOrderYear, ordersByYear.get(currentOrderYear) + 1);
+                ordersByYear.put(currentOrderYear, new ArrayList<Order>());
+
+            List<Order> currentYearOrderList = ordersByYear.get(currentOrderYear);
+            currentYearOrderList.add(currentOrder);
+            ordersByYear.put(currentOrderYear, currentYearOrderList);
+        }
+        for (Map.Entry<String, List<Order>> currentEntry : ordersByProvince.entrySet()) {
+            orderAmountsByProvince.put(currentEntry.getKey(), currentEntry.getValue().size());
         }
     }
 
@@ -133,13 +149,13 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         provinceRecyclerView.setLayoutManager(mLayoutManager);
         // specify an adapter (see also next example)
-        ProvincesAdapter provincesAdapter = new ProvincesAdapter(ordersByProvince);
+        ProvincesAdapter provincesAdapter = new ProvincesAdapter(orderAmountsByProvince);
         provinceRecyclerView.setAdapter(provincesAdapter);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(provinceRecyclerView.getContext(),
                 mLayoutManager.getOrientation());
         provinceRecyclerView.addItemDecoration(dividerItemDecoration);
 
-        int count = ordersByYear.get(ORDER_YEAR);
+        int count = ordersByYear.get(ORDER_YEAR).size();
         Resources res = getResources();
         String ordersFoundText = res.getQuantityString(R.plurals.orders_by_year_found, count, count, ORDER_YEAR);
 

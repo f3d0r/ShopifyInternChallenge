@@ -51,6 +51,9 @@ public class Customer implements Serializable {
     @JsonProperty("phone")
     private Object phone;
 
+    @JsonProperty("admin_graphql_api_id")
+    private String adminGraphqlApiId;
+
     @JsonProperty("id")
     private long id;
 
@@ -183,6 +186,14 @@ public class Customer implements Serializable {
         return phone;
     }
 
+    public String getAdminGraphqlApiId() {
+        return adminGraphqlApiId;
+    }
+
+    public void setAdminGraphqlApiId(String adminGraphqlApiId) {
+        this.adminGraphqlApiId = adminGraphqlApiId;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -234,6 +245,7 @@ public class Customer implements Serializable {
                         ",updated_at = '" + updatedAt + '\'' +
                         ",accepts_marketing = '" + acceptsMarketing + '\'' +
                         ",phone = '" + phone + '\'' +
+                        ",admin_graphql_api_id = '" + adminGraphqlApiId + '\'' +
                         ",id = '" + id + '\'' +
                         ",state = '" + state + '\'' +
                         ",first_name = '" + firstName + '\'' +

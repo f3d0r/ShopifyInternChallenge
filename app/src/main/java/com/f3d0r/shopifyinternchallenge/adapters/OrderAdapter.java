@@ -1,4 +1,4 @@
-package com.f3d0r.shopifyinternchallenge;
+package com.f3d0r.shopifyinternchallenge.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.f3d0r.shopifyinternchallenge.R;
 import com.f3d0r.shopifyinternchallenge.jackson_models.Order;
 
 import java.util.List;
@@ -22,8 +23,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     }
 
     // Create new views (invoked by the layout manager)
+    @NonNull
     @Override
-    public OrderAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public OrderAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent,
                                                       int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
@@ -63,7 +65,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         private TextView mOrderNumber;
         private TextView mTotalPrice;

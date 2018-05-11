@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Shopify - Order Summary</string>
 
-    <string name="orders_by_province">Orders by Providence</string>
+    <string name="orders_by_province">Orders by Province (Click Here for Details)</string>
     <string name="orders_by_year">Orders by Year</string>
     <string name="refresh">Refresh</string>
 
@@ -10,7 +10,7 @@
         <item quantity="other">%1$d orders from %2$d</item>
     </plurals>
 
-    <plurals name="orders_by_providence">
+    <plurals name="orders_by_province">
         <item quantity="one">%1$d order from %2$s</item>
         <item quantity="other">%1$d orders from %2$s</item>
     </plurals>
@@ -21,4 +21,7 @@
     <string name="total_items">Total items: %1$d</string>
     <string name="shipping_location">Ship To: %1$s, %2$s</string>
     <string name="order_time">Created At: %1$s</string>
+
+    <string name="cd_state_seal">state_seal</string>
+    <string name="cd_expand_arrow">expand_arrow</string>
 </resources>

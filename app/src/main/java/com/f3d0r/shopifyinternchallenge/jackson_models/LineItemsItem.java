@@ -58,6 +58,9 @@ public class LineItemsItem implements Serializable {
     @JsonProperty("product_id")
     private long productId;
 
+    @JsonProperty("admin_graphql_api_id")
+    private String adminGraphqlApiId;
+
     @JsonProperty("name")
     private String name;
 
@@ -209,6 +212,14 @@ public class LineItemsItem implements Serializable {
         return productId;
     }
 
+    public String getAdminGraphqlApiId() {
+        return adminGraphqlApiId;
+    }
+
+    public void setAdminGraphqlApiId(String adminGraphqlApiId) {
+        this.adminGraphqlApiId = adminGraphqlApiId;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -270,6 +281,7 @@ public class LineItemsItem implements Serializable {
                         ",price = '" + price + '\'' +
                         ",vendor = '" + vendor + '\'' +
                         ",product_id = '" + productId + '\'' +
+                        ",admin_graphql_api_id = '" + adminGraphqlApiId + '\'' +
                         ",name = '" + name + '\'' +
                         ",id = '" + id + '\'' +
                         ",sku = '" + sku + '\'' +

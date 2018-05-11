@@ -181,490 +181,501 @@ public class Order implements Serializable {
     @JsonProperty("financial_status")
     private String financialStatus;
 
+    @JsonProperty("admin_graphql_api_id")
+    private String adminGraphqlApiId;
+
     @JsonProperty("gateway")
     private String gateway;
 
     @JsonProperty("customer")
     private Customer customer;
 
-    public Object getCancelledAt() {
-        return cancelledAt;
-    }
-
     public void setCancelledAt(Object cancelledAt) {
         this.cancelledAt = cancelledAt;
     }
 
-    public Object getFulfillmentStatus() {
-        return fulfillmentStatus;
+    public Object getCancelledAt() {
+        return cancelledAt;
     }
 
     public void setFulfillmentStatus(Object fulfillmentStatus) {
         this.fulfillmentStatus = fulfillmentStatus;
     }
 
-    public String getTotalPriceUsd() {
-        return totalPriceUsd;
+    public Object getFulfillmentStatus() {
+        return fulfillmentStatus;
     }
 
     public void setTotalPriceUsd(String totalPriceUsd) {
         this.totalPriceUsd = totalPriceUsd;
     }
 
-    public BillingAddress getBillingAddress() {
-        return billingAddress;
+    public String getTotalPriceUsd() {
+        return totalPriceUsd;
     }
 
     public void setBillingAddress(BillingAddress billingAddress) {
         this.billingAddress = billingAddress;
     }
 
-    public List<LineItemsItem> getLineItems() {
-        return lineItems;
+    public BillingAddress getBillingAddress() {
+        return billingAddress;
     }
 
     public void setLineItems(List<LineItemsItem> lineItems) {
         this.lineItems = lineItems;
     }
 
-    public Object getLocationId() {
-        return locationId;
+    public List<LineItemsItem> getLineItems() {
+        return lineItems;
     }
 
     public void setLocationId(Object locationId) {
         this.locationId = locationId;
     }
 
-    public Object getSourceUrl() {
-        return sourceUrl;
+    public Object getLocationId() {
+        return locationId;
     }
 
     public void setSourceUrl(Object sourceUrl) {
         this.sourceUrl = sourceUrl;
     }
 
-    public Object getLandingSite() {
-        return landingSite;
+    public Object getSourceUrl() {
+        return sourceUrl;
     }
 
     public void setLandingSite(Object landingSite) {
         this.landingSite = landingSite;
     }
 
-    public Object getSourceIdentifier() {
-        return sourceIdentifier;
+    public Object getLandingSite() {
+        return landingSite;
     }
 
     public void setSourceIdentifier(Object sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;
     }
 
-    public Object getReference() {
-        return reference;
+    public Object getSourceIdentifier() {
+        return sourceIdentifier;
     }
 
     public void setReference(Object reference) {
         this.reference = reference;
     }
 
-    public int getNumber() {
-        return number;
+    public Object getReference() {
+        return reference;
     }
 
     public void setNumber(int number) {
         this.number = number;
     }
 
-    public Object getCheckoutId() {
-        return checkoutId;
+    public int getNumber() {
+        return number;
     }
 
     public void setCheckoutId(Object checkoutId) {
         this.checkoutId = checkoutId;
     }
 
-    public Object getCheckoutToken() {
-        return checkoutToken;
+    public Object getCheckoutId() {
+        return checkoutId;
     }
 
     public void setCheckoutToken(Object checkoutToken) {
         this.checkoutToken = checkoutToken;
     }
 
-    public List<Object> getTaxLines() {
-        return taxLines;
+    public Object getCheckoutToken() {
+        return checkoutToken;
     }
 
     public void setTaxLines(List<Object> taxLines) {
         this.taxLines = taxLines;
     }
 
-    public Object getCustomerLocale() {
-        return customerLocale;
+    public List<Object> getTaxLines() {
+        return taxLines;
     }
 
     public void setCustomerLocale(Object customerLocale) {
         this.customerLocale = customerLocale;
     }
 
-    public long getId() {
-        return id;
+    public Object getCustomerLocale() {
+        return customerLocale;
     }
 
     public void setId(long id) {
         this.id = id;
     }
 
-    public int getAppId() {
-        return appId;
+    public long getId() {
+        return id;
     }
 
     public void setAppId(int appId) {
         this.appId = appId;
     }
 
-    public String getSubtotalPrice() {
-        return subtotalPrice;
+    public int getAppId() {
+        return appId;
     }
 
     public void setSubtotalPrice(String subtotalPrice) {
         this.subtotalPrice = subtotalPrice;
     }
 
-    public Object getClosedAt() {
-        return closedAt;
+    public String getSubtotalPrice() {
+        return subtotalPrice;
     }
 
     public void setClosedAt(Object closedAt) {
         this.closedAt = closedAt;
     }
 
-    public String getOrderStatusUrl() {
-        return orderStatusUrl;
+    public Object getClosedAt() {
+        return closedAt;
     }
 
     public void setOrderStatusUrl(String orderStatusUrl) {
         this.orderStatusUrl = orderStatusUrl;
     }
 
-    public boolean isTest() {
-        return test;
+    public String getOrderStatusUrl() {
+        return orderStatusUrl;
     }
 
     public void setTest(boolean test) {
         this.test = test;
     }
 
-    public Object getDeviceId() {
-        return deviceId;
+    public boolean isTest() {
+        return test;
     }
 
     public void setDeviceId(Object deviceId) {
         this.deviceId = deviceId;
     }
 
-    public List<String> getPaymentGatewayNames() {
-        return paymentGatewayNames;
+    public Object getDeviceId() {
+        return deviceId;
     }
 
     public void setPaymentGatewayNames(List<String> paymentGatewayNames) {
         this.paymentGatewayNames = paymentGatewayNames;
     }
 
-    public String getTotalTax() {
-        return totalTax;
+    public List<String> getPaymentGatewayNames() {
+        return paymentGatewayNames;
     }
 
     public void setTotalTax(String totalTax) {
         this.totalTax = totalTax;
     }
 
-    public String getTags() {
-        return tags;
+    public String getTotalTax() {
+        return totalTax;
     }
 
     public void setTags(String tags) {
         this.tags = tags;
     }
 
-    public String getProcessingMethod() {
-        return processingMethod;
+    public String getTags() {
+        return tags;
     }
 
     public void setProcessingMethod(String processingMethod) {
         this.processingMethod = processingMethod;
     }
 
-    public List<Object> getShippingLines() {
-        return shippingLines;
+    public String getProcessingMethod() {
+        return processingMethod;
     }
 
     public void setShippingLines(List<Object> shippingLines) {
         this.shippingLines = shippingLines;
     }
 
-    public int getUserId() {
-        return userId;
+    public List<Object> getShippingLines() {
+        return shippingLines;
     }
 
     public void setUserId(int userId) {
         this.userId = userId;
     }
 
-    public Object getPhone() {
-        return phone;
+    public int getUserId() {
+        return userId;
     }
 
     public void setPhone(Object phone) {
         this.phone = phone;
     }
 
-    public List<Object> getNoteAttributes() {
-        return noteAttributes;
+    public Object getPhone() {
+        return phone;
     }
 
     public void setNoteAttributes(List<Object> noteAttributes) {
         this.noteAttributes = noteAttributes;
     }
 
-    public String getName() {
-        return name;
+    public List<Object> getNoteAttributes() {
+        return noteAttributes;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public Object getCartToken() {
-        return cartToken;
+    public String getName() {
+        return name;
     }
 
     public void setCartToken(Object cartToken) {
         this.cartToken = cartToken;
     }
 
-    public Object getLandingSiteRef() {
-        return landingSiteRef;
+    public Object getCartToken() {
+        return cartToken;
     }
 
     public void setLandingSiteRef(Object landingSiteRef) {
         this.landingSiteRef = landingSiteRef;
     }
 
-    public List<Object> getDiscountCodes() {
-        return discountCodes;
+    public Object getLandingSiteRef() {
+        return landingSiteRef;
     }
 
     public void setDiscountCodes(List<Object> discountCodes) {
         this.discountCodes = discountCodes;
     }
 
-    public Object getNote() {
-        return note;
+    public List<Object> getDiscountCodes() {
+        return discountCodes;
     }
 
     public void setNote(Object note) {
         this.note = note;
     }
 
-    public int getOrderNumber() {
-        return orderNumber;
+    public Object getNote() {
+        return note;
     }
 
     public void setOrderNumber(int orderNumber) {
         this.orderNumber = orderNumber;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public int getOrderNumber() {
+        return orderNumber;
     }
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public boolean isTaxesIncluded() {
-        return taxesIncluded;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
     public void setTaxesIncluded(boolean taxesIncluded) {
         this.taxesIncluded = taxesIncluded;
     }
 
-    public boolean isBuyerAcceptsMarketing() {
-        return buyerAcceptsMarketing;
+    public boolean isTaxesIncluded() {
+        return taxesIncluded;
     }
 
     public void setBuyerAcceptsMarketing(boolean buyerAcceptsMarketing) {
         this.buyerAcceptsMarketing = buyerAcceptsMarketing;
     }
 
-    public boolean isConfirmed() {
-        return confirmed;
+    public boolean isBuyerAcceptsMarketing() {
+        return buyerAcceptsMarketing;
     }
 
     public void setConfirmed(boolean confirmed) {
         this.confirmed = confirmed;
     }
 
-    public int getTotalWeight() {
-        return totalWeight;
+    public boolean isConfirmed() {
+        return confirmed;
     }
 
     public void setTotalWeight(int totalWeight) {
         this.totalWeight = totalWeight;
     }
 
-    public String getContactEmail() {
-        return contactEmail;
+    public int getTotalWeight() {
+        return totalWeight;
     }
 
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
     }
 
-    public List<Object> getRefunds() {
-        return refunds;
+    public String getContactEmail() {
+        return contactEmail;
     }
 
     public void setRefunds(List<Object> refunds) {
         this.refunds = refunds;
     }
 
-    public String getTotalDiscounts() {
-        return totalDiscounts;
+    public List<Object> getRefunds() {
+        return refunds;
     }
 
     public void setTotalDiscounts(String totalDiscounts) {
         this.totalDiscounts = totalDiscounts;
     }
 
-    public List<Object> getFulfillments() {
-        return fulfillments;
+    public String getTotalDiscounts() {
+        return totalDiscounts;
     }
 
     public void setFulfillments(List<Object> fulfillments) {
         this.fulfillments = fulfillments;
     }
 
-    public String getUpdatedAt() {
-        return updatedAt;
+    public List<Object> getFulfillments() {
+        return fulfillments;
     }
 
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 
-    public Object getReferringSite() {
-        return referringSite;
+    public String getUpdatedAt() {
+        return updatedAt;
     }
 
     public void setReferringSite(Object referringSite) {
         this.referringSite = referringSite;
     }
 
-    public String getProcessedAt() {
-        return processedAt;
+    public Object getReferringSite() {
+        return referringSite;
     }
 
     public void setProcessedAt(String processedAt) {
         this.processedAt = processedAt;
     }
 
-    public String getCurrency() {
-        return currency;
+    public String getProcessedAt() {
+        return processedAt;
     }
 
     public void setCurrency(String currency) {
         this.currency = currency;
     }
 
-    public ShippingAddress getShippingAddress() {
-        return shippingAddress;
+    public String getCurrency() {
+        return currency;
     }
 
     public void setShippingAddress(ShippingAddress shippingAddress) {
         this.shippingAddress = shippingAddress;
     }
 
-    public String getEmail() {
-        return email;
+    public ShippingAddress getShippingAddress() {
+        return shippingAddress;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public Object getBrowserIp() {
-        return browserIp;
+    public String getEmail() {
+        return email;
     }
 
     public void setBrowserIp(Object browserIp) {
         this.browserIp = browserIp;
     }
 
-    public String getSourceName() {
-        return sourceName;
+    public Object getBrowserIp() {
+        return browserIp;
     }
 
     public void setSourceName(String sourceName) {
         this.sourceName = sourceName;
     }
 
-    public String getTotalPrice() {
-        return totalPrice;
+    public String getSourceName() {
+        return sourceName;
     }
 
     public void setTotalPrice(String totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    public String getTotalLineItemsPrice() {
-        return totalLineItemsPrice;
+    public String getTotalPrice() {
+        return totalPrice;
     }
 
     public void setTotalLineItemsPrice(String totalLineItemsPrice) {
         this.totalLineItemsPrice = totalLineItemsPrice;
     }
 
-    public String getToken() {
-        return token;
+    public String getTotalLineItemsPrice() {
+        return totalLineItemsPrice;
     }
 
     public void setToken(String token) {
         this.token = token;
     }
 
-    public Object getCancelReason() {
-        return cancelReason;
+    public String getToken() {
+        return token;
     }
 
     public void setCancelReason(Object cancelReason) {
         this.cancelReason = cancelReason;
     }
 
-    public String getFinancialStatus() {
-        return financialStatus;
+    public Object getCancelReason() {
+        return cancelReason;
     }
 
     public void setFinancialStatus(String financialStatus) {
         this.financialStatus = financialStatus;
     }
 
-    public String getGateway() {
-        return gateway;
+    public String getFinancialStatus() {
+        return financialStatus;
+    }
+
+    public String getAdminGraphqlApiId() {
+        return adminGraphqlApiId;
+    }
+
+    public void setAdminGraphqlApiId(String adminGraphqlApiId) {
+        this.adminGraphqlApiId = adminGraphqlApiId;
     }
 
     public void setGateway(String gateway) {
         this.gateway = gateway;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public String getGateway() {
+        return gateway;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public Customer getCustomer() {
+        return customer;
     }
 
     @Override
@@ -729,6 +740,7 @@ public class Order implements Serializable {
                         ",token = '" + token + '\'' +
                         ",cancel_reason = '" + cancelReason + '\'' +
                         ",financial_status = '" + financialStatus + '\'' +
+                        ",admin_graphql_api_id = '" + adminGraphqlApiId + '\'' +
                         ",gateway = '" + gateway + '\'' +
                         ",customer = '" + customer + '\'' +
                         "}";
