@@ -66,124 +66,124 @@ public class Customer implements Serializable {
     @JsonProperty("email")
     private String email;
 
-    public void setTotalSpent(String totalSpent) {
-        this.totalSpent = totalSpent;
-    }
-
     public String getTotalSpent() {
         return totalSpent;
     }
 
-    public void setNote(Object note) {
-        this.note = note;
+    public void setTotalSpent(String totalSpent) {
+        this.totalSpent = totalSpent;
     }
 
     public Object getNote() {
         return note;
     }
 
-    public void setLastOrderName(String lastOrderName) {
-        this.lastOrderName = lastOrderName;
+    public void setNote(Object note) {
+        this.note = note;
     }
 
     public String getLastOrderName() {
         return lastOrderName;
     }
 
-    public void setLastOrderId(long lastOrderId) {
-        this.lastOrderId = lastOrderId;
+    public void setLastOrderName(String lastOrderName) {
+        this.lastOrderName = lastOrderName;
     }
 
     public long getLastOrderId() {
         return lastOrderId;
     }
 
-    public void setTaxExempt(boolean taxExempt) {
-        this.taxExempt = taxExempt;
+    public void setLastOrderId(long lastOrderId) {
+        this.lastOrderId = lastOrderId;
     }
 
     public boolean isTaxExempt() {
         return taxExempt;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setTaxExempt(boolean taxExempt) {
+        this.taxExempt = taxExempt;
     }
 
     public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setMultipassIdentifier(Object multipassIdentifier) {
-        this.multipassIdentifier = multipassIdentifier;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public Object getMultipassIdentifier() {
         return multipassIdentifier;
     }
 
-    public void setVerifiedEmail(boolean verifiedEmail) {
-        this.verifiedEmail = verifiedEmail;
+    public void setMultipassIdentifier(Object multipassIdentifier) {
+        this.multipassIdentifier = multipassIdentifier;
     }
 
     public boolean isVerifiedEmail() {
         return verifiedEmail;
     }
 
-    public void setTags(String tags) {
-        this.tags = tags;
+    public void setVerifiedEmail(boolean verifiedEmail) {
+        this.verifiedEmail = verifiedEmail;
     }
 
     public String getTags() {
         return tags;
     }
 
-    public void setOrdersCount(int ordersCount) {
-        this.ordersCount = ordersCount;
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 
     public int getOrdersCount() {
         return ordersCount;
     }
 
-    public void setDefaultAddress(DefaultAddress defaultAddress) {
-        this.defaultAddress = defaultAddress;
+    public void setOrdersCount(int ordersCount) {
+        this.ordersCount = ordersCount;
     }
 
     public DefaultAddress getDefaultAddress() {
         return defaultAddress;
     }
 
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setDefaultAddress(DefaultAddress defaultAddress) {
+        this.defaultAddress = defaultAddress;
     }
 
     public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setAcceptsMarketing(boolean acceptsMarketing) {
-        this.acceptsMarketing = acceptsMarketing;
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public boolean isAcceptsMarketing() {
         return acceptsMarketing;
     }
 
-    public void setPhone(Object phone) {
-        this.phone = phone;
+    public void setAcceptsMarketing(boolean acceptsMarketing) {
+        this.acceptsMarketing = acceptsMarketing;
     }
 
     public Object getPhone() {
         return phone;
+    }
+
+    public void setPhone(Object phone) {
+        this.phone = phone;
     }
 
     public String getAdminGraphqlApiId() {
@@ -194,36 +194,36 @@ public class Customer implements Serializable {
         this.adminGraphqlApiId = adminGraphqlApiId;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public long getId() {
         return id;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getState() {
         return state;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override

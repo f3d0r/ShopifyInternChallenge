@@ -33,9 +33,9 @@
             android:id="@+id/rv_province_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="0.5"
             android:paddingEnd="@dimen/rv_padding_horizontal"
             android:paddingStart="@dimen/rv_padding_horizontal"
-            android:layout_weight="0.5"
             android:scrollbars="vertical" />
 
         <View

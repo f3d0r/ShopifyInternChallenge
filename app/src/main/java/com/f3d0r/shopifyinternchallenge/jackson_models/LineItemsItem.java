@@ -76,140 +76,140 @@ public class LineItemsItem implements Serializable {
     @JsonProperty("properties")
     private List<Object> properties;
 
-    public void setVariantTitle(String variantTitle) {
-        this.variantTitle = variantTitle;
-    }
-
     public String getVariantTitle() {
         return variantTitle;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setVariantTitle(String variantTitle) {
+        this.variantTitle = variantTitle;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setFulfillableQuantity(int fulfillableQuantity) {
-        this.fulfillableQuantity = fulfillableQuantity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getFulfillableQuantity() {
         return fulfillableQuantity;
     }
 
-    public void setTotalDiscount(String totalDiscount) {
-        this.totalDiscount = totalDiscount;
+    public void setFulfillableQuantity(int fulfillableQuantity) {
+        this.fulfillableQuantity = fulfillableQuantity;
     }
 
     public String getTotalDiscount() {
         return totalDiscount;
     }
 
-    public void setFulfillmentStatus(Object fulfillmentStatus) {
-        this.fulfillmentStatus = fulfillmentStatus;
+    public void setTotalDiscount(String totalDiscount) {
+        this.totalDiscount = totalDiscount;
     }
 
     public Object getFulfillmentStatus() {
         return fulfillmentStatus;
     }
 
-    public void setFulfillmentService(String fulfillmentService) {
-        this.fulfillmentService = fulfillmentService;
+    public void setFulfillmentStatus(Object fulfillmentStatus) {
+        this.fulfillmentStatus = fulfillmentStatus;
     }
 
     public String getFulfillmentService() {
         return fulfillmentService;
     }
 
-    public void setTaxable(boolean taxable) {
-        this.taxable = taxable;
+    public void setFulfillmentService(String fulfillmentService) {
+        this.fulfillmentService = fulfillmentService;
     }
 
     public boolean isTaxable() {
         return taxable;
     }
 
-    public void setGiftCard(boolean giftCard) {
-        this.giftCard = giftCard;
+    public void setTaxable(boolean taxable) {
+        this.taxable = taxable;
     }
 
     public boolean isGiftCard() {
         return giftCard;
     }
 
-    public void setRequiresShipping(boolean requiresShipping) {
-        this.requiresShipping = requiresShipping;
+    public void setGiftCard(boolean giftCard) {
+        this.giftCard = giftCard;
     }
 
     public boolean isRequiresShipping() {
         return requiresShipping;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setRequiresShipping(boolean requiresShipping) {
+        this.requiresShipping = requiresShipping;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setVariantInventoryManagement(Object variantInventoryManagement) {
-        this.variantInventoryManagement = variantInventoryManagement;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Object getVariantInventoryManagement() {
         return variantInventoryManagement;
     }
 
-    public void setProductExists(boolean productExists) {
-        this.productExists = productExists;
+    public void setVariantInventoryManagement(Object variantInventoryManagement) {
+        this.variantInventoryManagement = variantInventoryManagement;
     }
 
     public boolean isProductExists() {
         return productExists;
     }
 
-    public void setVariantId(long variantId) {
-        this.variantId = variantId;
+    public void setProductExists(boolean productExists) {
+        this.productExists = productExists;
     }
 
     public long getVariantId() {
         return variantId;
     }
 
-    public void setTaxLines(List<Object> taxLines) {
-        this.taxLines = taxLines;
+    public void setVariantId(long variantId) {
+        this.variantId = variantId;
     }
 
     public List<Object> getTaxLines() {
         return taxLines;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setTaxLines(List<Object> taxLines) {
+        this.taxLines = taxLines;
     }
 
     public String getPrice() {
         return price;
     }
 
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public String getVendor() {
         return vendor;
     }
 
-    public void setProductId(long productId) {
-        this.productId = productId;
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
     }
 
     public long getProductId() {
         return productId;
+    }
+
+    public void setProductId(long productId) {
+        this.productId = productId;
     }
 
     public String getAdminGraphqlApiId() {
@@ -220,44 +220,44 @@ public class LineItemsItem implements Serializable {
         this.adminGraphqlApiId = adminGraphqlApiId;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public long getId() {
         return id;
     }
 
-    public void setSku(String sku) {
-        this.sku = sku;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getSku() {
         return sku;
     }
 
-    public void setGrams(int grams) {
-        this.grams = grams;
+    public void setSku(String sku) {
+        this.sku = sku;
     }
 
     public int getGrams() {
         return grams;
     }
 
-    public void setProperties(List<Object> properties) {
-        this.properties = properties;
+    public void setGrams(int grams) {
+        this.grams = grams;
     }
 
     public List<Object> getProperties() {
         return properties;
+    }
+
+    public void setProperties(List<Object> properties) {
+        this.properties = properties;
     }
 
     @Override

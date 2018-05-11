@@ -34,7 +34,7 @@ public class ProvincesAdapter extends RecyclerView.Adapter<ProvincesAdapter.View
                                                           int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_order_by_province, parent, false);
+                .inflate(R.layout.item_orders_by_province, parent, false);
 
         context = parent.getContext();
         return new ViewHolder(v);

@@ -51,124 +51,124 @@ public class ShippingAddress implements Serializable {
     @JsonProperty("longitude")
     private double longitude;
 
-    public void setZip(String zip) {
-        this.zip = zip;
-    }
-
     public String getZip() {
         return zip;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setZip(String zip) {
+        this.zip = zip;
     }
 
     public String getCountry() {
         return country;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setAddress2(Object address2) {
-        this.address2 = address2;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public Object getAddress2() {
         return address2;
     }
 
-    public void setAddress1(String address1) {
-        this.address1 = address1;
+    public void setAddress2(Object address2) {
+        this.address2 = address2;
     }
 
     public String getAddress1() {
         return address1;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
+    public void setAddress1(String address1) {
+        this.address1 = address1;
     }
 
     public double getLatitude() {
         return latitude;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setProvinceCode(String provinceCode) {
-        this.provinceCode = provinceCode;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getProvinceCode() {
         return provinceCode;
     }
 
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
+    public void setProvinceCode(String provinceCode) {
+        this.provinceCode = provinceCode;
     }
 
     public String getCountryCode() {
         return countryCode;
     }
 
-    public void setProvince(String province) {
-        this.province = province;
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
     public String getProvince() {
         return province;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setProvince(String province) {
+        this.province = province;
     }
 
     public String getPhone() {
         return phone;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setCompany(Object company) {
-        this.company = company;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Object getCompany() {
         return company;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setCompany(Object company) {
+        this.company = company;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public double getLongitude() {
         return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     @Override
